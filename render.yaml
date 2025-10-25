@@ -14,8 +14,9 @@ services:
         value: production
 
   # --- Frontend Service ---
-  - type: static
+  - type: web
     name: zerodha-frontend
+    env: static
     plan: free
     rootDir: frontend
     buildCommand: "npm install && npm run build"
@@ -26,8 +27,9 @@ services:
 
   # --- Dashboard (Optional) ---
   # Remove this block if your dashboard is part of frontend
-  - type: static
+  - type: web
     name: zerodha-dashboard
+    env: static
     plan: free
     rootDir: dashboard
     buildCommand: "npm install && npm run build"
