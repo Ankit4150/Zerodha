@@ -37,7 +37,7 @@ const Signuppage = ({ onSuccess, onToggle }) => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-1-backend-3qg2.onrender.com/Signup",
+        "https://zerodha-1-backend-3qg2.onrender.com/signup",
         {
           ...inputValue,
         },
