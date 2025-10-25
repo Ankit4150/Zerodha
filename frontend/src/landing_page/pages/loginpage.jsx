@@ -32,7 +32,7 @@ const Loginpage = ({ onSuccess, onToggle }) => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-1-backend-3qg2.onrender.com/login",
+        "https://zerodha-1-backend-3qg2.onrender.com",
         {
           ...inputValue,
         },
@@ -43,7 +43,7 @@ const Loginpage = ({ onSuccess, onToggle }) => {
       if (success) {
       
         handleSuccess(message);
-        window.location.href = "https://zerodha-1-dashboard.onrender.com";
+        window.location.href ="https://zerodha-1-dashboard.onrender.com";
         setTimeout(() => {
              navigate("/dashboard");
         }, 1000);
