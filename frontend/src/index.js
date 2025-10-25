@@ -11,7 +11,7 @@ import About from './landing_page/about/Aboutpage'
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import NotFound from  './landing_page/Notfound';
-import App from './App';
+
 import Signuppage from './landing_page/signup/signup';
 import Loginpage from './landing_page/pages/loginpage';
 

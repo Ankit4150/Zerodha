@@ -1,0 +1,27 @@
+services:
+  # --- Backend ---
+  - type: web
+    name: zerodha-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    plan: free
+
+  # --- Frontend ---
+  - type: web
+    name: zerodha-frontend
+    env: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    plan: free
+
+  # --- Dashboard (if you have one) ---
+  - type: web
+    name: zerodha-dashboard
+    env: node
+    rootDir: dashboard
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    plan: free
