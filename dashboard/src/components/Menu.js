@@ -60,7 +60,7 @@ const Menu =()=>{
 
     if (res.data.status === true) {
       setUsername("");
-     window.location.replace(  "http://localhost:3000/signup", { replace: true });
+     window.location.replace(  "https://zerodha-1-frontend-xgzy.onrender.com/signup", { replace: true });
     }
   } catch (err) {
     console.log("Logout failed:", err);
