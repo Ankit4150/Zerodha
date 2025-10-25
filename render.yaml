@@ -3,7 +3,6 @@ services:
   - type: web
     name: zerodha-backend
     env: node
-    plan: free
     rootDir: backend
     buildCommand: "npm install"
     startCommand: "node server.js"
@@ -17,7 +16,6 @@ services:
   - type: web
     name: zerodha-frontend
     env: static
-    plan: free
     rootDir: frontend
     buildCommand: "npm install && npm run build"
     staticPublishPath: build
@@ -26,11 +24,9 @@ services:
         value: https://zerodha-backend.onrender.com
 
   # --- Dashboard (Optional) ---
-  # Remove this block if your dashboard is part of frontend
   - type: web
     name: zerodha-dashboard
     env: static
-    plan: free
     rootDir: dashboard
     buildCommand: "npm install && npm run build"
     staticPublishPath: build
