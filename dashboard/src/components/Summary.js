@@ -11,7 +11,7 @@ const Summary = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const { data } = await axios.get("https://zerodha-1-backend-3qg2.onrender.com/me", {
+        const { data } = await axios.get("https://zerodha-1-backend-3qg2.onrender.com", {
           withCredentials: true,
         });
 
