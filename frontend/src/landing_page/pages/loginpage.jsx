@@ -43,7 +43,7 @@ const Loginpage = ({ onSuccess, onToggle }) => {
       if (success) {
       
         handleSuccess(message);
-        window.location.href = "http://localhost:3001";
+        window.location.href = "https://zerodha-1-dashboard.onrender.com";
         setTimeout(() => {
              navigate("/dashboard");
         }, 1000);
