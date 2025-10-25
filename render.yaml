@@ -1,21 +1,29 @@
 services:
-  # --- Backend ---
+  # --- Backend Service ---
   - type: web
     name: zerodha-backend
     env: node
-    rootDir: backend
-    buildCommand: npm install
-    startCommand: node server.js
     plan: free
+    rootDir: backend
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: PORT
+        value: 3002
+      - key: NODE_ENV
+        value: production
 
-  # --- Frontend ---
+  # --- Frontend Service ---
   - type: web
     name: zerodha-frontend
-    env: node
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: build
+    env: static
     plan: free
+    rootDir: frontend
+    buildCommand: "npm install && npm run build"
+    publishDir: build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://zerodha-backend.onrender.com
 
   # --- Dashboard (if you have one) ---
   - type: web
