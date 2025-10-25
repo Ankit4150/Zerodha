@@ -23,7 +23,7 @@ services:
       - key: REACT_APP_API_URL
         value: https://zerodha-backend.onrender.com
 
-  # --- Dashboard (Optional) ---
+  # --- Dashboard Service (Optional) ---
   - type: web
     name: zerodha-dashboard
     env: static
