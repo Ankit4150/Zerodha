@@ -41,7 +41,7 @@ app.use(cors({
 }));
 app.use("/",authRoute);
 
-//app.use(cors());
+app.use(cors());
 
 
 
