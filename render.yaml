@@ -14,22 +14,21 @@ services:
         value: production
 
   # --- Frontend Service ---
-  - type: web
+  - type: static
     name: zerodha-frontend
-    env: static
     plan: free
     rootDir: frontend
     buildCommand: "npm install && npm run build"
-    publishDir: build
+    staticPublishPath: build
     envVars:
       - key: REACT_APP_API_URL
         value: https://zerodha-backend.onrender.com
 
-  # --- Dashboard (if you have one) ---
-  - type: web
+  # --- Dashboard (Optional) ---
+  # Remove this block if your dashboard is part of frontend
+  - type: static
     name: zerodha-dashboard
-    env: node
-    rootDir: dashboard
-    buildCommand: npm install && npm run build
-    staticPublishPath: build
     plan: free
+    rootDir: dashboard
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: build
