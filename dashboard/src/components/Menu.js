@@ -34,7 +34,7 @@ const Menu =()=>{
     useEffect(() => {
     const fetchUser = async () => {
       try {
-        const { data } = await axios.get("https://zerodha-1-backend-3qg2.onrender.com/me", {
+        const { data } = await axios.get("http://localhost:3002/me", {
           withCredentials: true,
         });
 
@@ -55,12 +55,12 @@ const Menu =()=>{
   // Logout handler
   const handleLogout = async () => {
   try {
-    const res = await axios.post("https://zerodha-1-backend-3qg2.onrender.com/logout", {}, { withCredentials: true });
+    const res = await axios.post("http://localhost:3002/logout", {}, { withCredentials: true });
     console.log("Logout response:", res.data);
 
     if (res.data.status === true) {
       setUsername("");
-     window.location.replace(  "https://zerodha-1-frontend-xgzy.onrender.com/signup", { replace: true });
+     window.location.replace(  "http://localhost:3000/signup", { replace: true });
     }
   } catch (err) {
     console.log("Logout failed:", err);
